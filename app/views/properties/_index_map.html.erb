@@ -1,8 +1,47 @@
-<div class= 'index_map'>
-  <iframe id='map-index'
-    width="600"
-    height="450"
-    frameborder="0" style="border:0"
-     src="<%="https://www.google.com/maps/embed/v1/place?key=#{ENV['GOOGLE_MAP_KEY']}&q=#{property_attributes(@properties)}"%>" allowfullscreen>
-  </iframe>
-</div>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>just FUCKING WORK</h3>
+
+    <div id="map"></div>
+
+    <script>
+      function initMap() {
+
+        var latitude = <%= @properties[0].lat.to_json %>;
+        var longitude = <%= @properties[0].long.to_json %>;
+        console.log(latitude, longitude)
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: new google.maps.LatLng(latitude, longitude)
+      });
+
+        <% @properties.each do |property| %>
+          var lat = <%= property.lat.to_json %>;
+          var long = <%= property.long.to_json %>;
+
+          var beths_awesome = {lat: lat, lng: long};
+
+        var marker = new google.maps.Marker({
+          position: beths_awesome,
+          map: map,
+        });
+        <%end %>
+      }
+    </script>
+
+    <script async defer
+      src="<%="https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAP_KEY']}&q=#{property_attributes(@properties)}&callback=initMap"%>">
+    </script>
+  </body>
+</html>
