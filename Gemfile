@@ -22,6 +22,8 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'simplecov', :require => false, :group => :test
 gem 'geocoder'
+gem 'sidekiq'
+gem 'sinatra', '>= 1.3.0', :require => nil
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
@@ -42,6 +44,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
+  gem 'rspec-activemodel-mocks'
 end
 
 group :test do
