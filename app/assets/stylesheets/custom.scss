@@ -2,6 +2,21 @@
 @import "bootstrap";
 @import 'bootstrap/theme';
 
+.denied {
+  color: red;
+}
+
+.in_progress {
+  color: blue;
+}
+
+.confirmed {
+  color: green;
+}
+
+.user_nav {
+  display: flex;
+}
 // .nav {
 //   display: flex;
 //   text-align: center;
@@ -30,7 +45,7 @@
 .navbar-nav > li > a {
   text-shadow: none;
   color: #b7b7b7;
-  padding-bottom: 11px !important; 
+  padding-bottom: 11px !important;
 }
 
 .navbar-nav > li > a:hover {
@@ -56,7 +71,7 @@
 
 .img-circle {
   width: 45px;
-  border: 3px solid #b7b7b7 
+  border: 3px solid #b7b7b7
 }
 
 .dropdown-menu>li>a:hover {
@@ -88,14 +103,14 @@
 
 .jumbotron {
   background-color:transparent !important;
-  font-family: 'Khula', sans-serif !important; 
+  font-family: 'Khula', sans-serif !important;
 }
   .title {
     color: #ff5a5f !important;
     font-size: 55px;
     font-weight: bold;
   }
-  
+
   .subtitle {
     font-size: 50px;
   }
@@ -123,7 +138,7 @@ input#guests {
 input, select, option {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;  
+  box-sizing: border-box;
 }
 input, select {
   width: 200px;
@@ -304,4 +319,79 @@ footer ul li {
 
 .index_map {
   float: right;
+}
+
+.delete-button {
+  max-width: 70px;
+  max-height: 20px;
+}
+
+.property-row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.admin-table-width {
+  width: 200px !important;
+  float: left;
+}
+.state {
+  fill: none;
+  stroke: #a9a9a9;
+  stroke-width: 1;
+}
+.state:hover{
+  fill-opacity:0.5;
+}
+#tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 1px;
+  border-radius: 2px;
+  pointer-events: none;
+}
+#tooltip h4{
+  margin:0;
+  font-size:14px;
+}
+#tooltip{
+  background:rgba(0,0,0,0.9);
+  border:1px solid grey;
+  border-radius:5px;
+  font-size:12px;
+  width:auto;
+  padding:4px;
+  color:white;
+  opacity:0;
+}
+#tooltip table{
+  table-layout:fixed;
+}
+#tooltip tr td{
+  padding:0;
+  margin:0;
+}
+#tooltip tr td:nth-child(1){
+  width:50px;
+}
+#tooltip tr td:nth-child(2){
+  text-align:center;
+}
+
+.review-picture {
+  height: 48px;
+  width: 48px;
+  border-radius: 25px;
+}
+
+.review-name {
+  display: inline-block;
+}
+
+.comment-text {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", "sans-serif";
 }
